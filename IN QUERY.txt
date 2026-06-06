@@ -1,0 +1,31 @@
+@ IN 
+@ What is IN?
+
+The IN operator is used to check whether a value matches any value in a specified list.
+
+Syntax
+SELECT column_name
+FROM table_name
+WHERE column_name IN (value1, value2, value3);
+
+EXAMPLE:
+SELECT Name
+FROM Student
+WHERE DeptID IN (1, 2);
+//////// E N D /////////////
+
+This query displays the names of students whose DeptID is either 1 or 2.
+
+Example Table
+RollNo	Name	DeptID
+1	     Abzaan	 1
+2	      Ali	   2
+3	      Sara	 3
+4	      John	 1
+Output
+Name
+Abzaan
+Ali
+John
+
+Sara is not shown because her DeptID is 3, which is not in the list (1, 2).

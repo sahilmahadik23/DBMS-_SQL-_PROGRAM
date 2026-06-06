@@ -1,0 +1,96 @@
+@ FUNCTION
+
+EXAMPLE:
+DELIMITER //
+
+CREATE FUNCTION Bonus(salary INT)
+RETURNS INT
+DETERMINISTIC
+BEGIN
+    RETURN salary * 0.10;
+END //
+
+DELIMITER ;
+
+///////// E N D //////////////
+
+//
+Suppose Employee table contains:
+
+EmpID	Name	Salary
+1	    Ali	  50000
+2	    Sara	60000
+
+Query:
+
+SELECT Name, Salary, Bonus(Salary) AS BonusAmount
+FROM Employee;
+Output
+Name	Salary	BonusAmount
+Ali	  50000	   5000
+Sara	60000	   6000
+
+//
+
+
+// This code creates a User Defined Function (UDF) named Bonus.
+  The function takes a salary as input and returns 10% of the salary as bonus.
+
+@ What is a Function?
+  A Function is a database object that:
+  Accepts input parameters.
+  Performs a calculation or operation.
+  Returns a single value.
+  Just like functions in C, C++, Java, or Python.
+
+//
+1. DELIMITER //
+DELIMITER //
+Changes the delimiter from ; to //.
+Allows multiple statements inside the function.
+
+2. CREATE FUNCTION Bonus(salary INT)
+CREATE FUNCTION Bonus(salary INT)
+CREATE FUNCTION creates a function.
+Bonus is the function name.
+salary INT is the input parameter.
+
+Example:
+
+salary = 50000
+
+3. RETURNS INT
+RETURNS INT
+Specifies the return type.
+The function will return an integer value.
+
+4. DETERMINISTIC
+DETERMINISTIC
+Means the function always produces the same output for the same input.
+
+Example:
+
+Bonus(50000) = 5000
+Bonus(50000) = 5000
+
+Output never changes for the same salary.
+
+5. BEGIN ... END
+BEGIN
+    RETURN salary * 0.10;
+END
+Contains the function logic.
+Calculates 10% of the salary.
+Returns the result.
+
+Example:
+
+salary = 50000
+
+Bonus = 50000 × 0.10
+      = 5000
+
+6. DELIMITER ;
+DELIMITER ;
+Restores the default delimiter.
+//

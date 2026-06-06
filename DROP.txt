@@ -1,0 +1,23 @@
+// HOW TO DELETE A TABLE WITH ALL ITS ATTRIBUTES ,DATABASE etc.
+
+DROP TABLE Student;
+
+DROP DATABASE CollegeDB;
+
+//DROP TABLE
+  DROP TABLE is used to delete an entire table.
+  It removes:
+    All rows (data)
+    All columns (structure)
+    Constraints (Primary Key, Foreign Key, etc.)
+
+//DROP DATABASE
+  Deletes the entire database.
+  Removes:
+    All tables
+    All data
+    Views
+    Procedures
+    Triggers
+    CollegeDB
+  Name of the database to be deleted.

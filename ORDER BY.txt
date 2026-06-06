@@ -1,0 +1,40 @@
+@ ORDER BY
+This query displays all student records and sorts them according to their marks in descending order (highest to lowest) and ascending (lowest to highest).
+//
+What is ORDER BY?
+
+ORDER BY is used to sort the result set based on one or more columns.
+
+Syntax
+SELECT column_name
+FROM table_name
+ORDER BY column_name ASC|DESC;
+//
+
+SELECT *
+FROM Student
+ORDER BY Marks DESC;
+
+SELECT *
+FROM Student
+ORDER BY Marks ASC;
+
+//
+SELECT *
+SELECT retrieves data from the table.
+'*' means display all columns.
+
+FROM Student
+Retrieves data from the Student table.
+
+ORDER BY Marks
+ORDER BY is used to sort the result.
+Marks is the column used for sorting.
+
+DESC
+DESC stands for Descending Order.
+Displays values from highest to lowest.
+
+ASC
+ASC stands for Ascending Order.
+Displays values from lowest to highest.

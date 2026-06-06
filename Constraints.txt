@@ -1,0 +1,52 @@
+//What are Constraints?
+
+//Constraints are rules applied to table columns to control the data entered into the table.
+
+//They make sure data is correct, valid, and consistent.
+
+//Common SQL Constraints
+  PRIMARY KEY → uniquely identifies each row
+  NOT NULL → value cannot be empty
+  UNIQUE → no duplicate values allowed
+  CHECK → value must satisfy a condition
+  DEFAULT → gives a default value if none is entered
+  FOREIGN KEY → links one table to another
+
+//EX. FOR Constraints
+
+CREATE TABLE Employee(
+    EmpID INT PRIMARY KEY,
+    Name VARCHAR(50) NOT NULL,
+    Salary DECIMAL(10,2) CHECK(Salary > 0),
+    Email VARCHAR(100) UNIQUE
+);
+
+///////////////////////////////////
+
+// 1. EmpID INT PRIMARY KEY
+
+EmpID stores employee ID.
+INT means integer.
+PRIMARY KEY means:
+each employee must have a unique ID
+it cannot be NULL
+
+2. Name VARCHAR(50) NOT NULL
+
+Name stores employee name.
+VARCHAR(50) means text up to 50 characters.
+NOT NULL means this field cannot be empty.
+
+3. Salary DECIMAL(10,2) CHECK(Salary > 0)
+
+Salary stores salary with decimal values.
+DECIMAL(10,2) means:
+total 10 digits
+2 digits after decimal point
+CHECK(Salary > 0) means salary must be greater than 0.
+
+4. Email VARCHAR(100) UNIQUE
+
+Email stores email address.
+VARCHAR(100) means up to 100 characters.
+UNIQUE means no two employees can have the same email.

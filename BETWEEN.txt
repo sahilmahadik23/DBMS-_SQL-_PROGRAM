@@ -1,0 +1,4 @@
+This query displays all students whose marks are between 70 and 90.
+
+SELECT * FROM Student
+WHERE Marks BETWEEN 70 AND 90;

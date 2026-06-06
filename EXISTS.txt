@@ -1,0 +1,85 @@
+@ EXISTS
+@ What is EXISTS?
+  EXISTS is used to check whether a subquery returns any rows.
+  If the subquery returns one or more rows → EXISTS is TRUE.
+  If the subquery returns no rows → EXISTS is FALSE.
+
+EXAMPLE:
+SELECT d.DeptName
+FROM Department d
+WHERE EXISTS (
+    SELECT 1
+    FROM Student s
+    WHERE s.DeptID = d.DeptID
+);
+
+//////// E n D /////////////////
+
+How the Query Works
+Department = CSE (DeptID = 1)
+
+Subquery:
+
+SELECT 1
+FROM Student
+WHERE DeptID = 1;
+
+Rows found ✔
+
+EXISTS = TRUE
+
+CSE is displayed.
+
+Department = IT (DeptID = 2)
+
+Subquery:
+
+SELECT 1
+FROM Student
+WHERE DeptID = 2;
+
+Rows found ✔
+
+EXISTS = TRUE
+
+IT is displayed.
+
+Department = ECE (DeptID = 3)
+
+Subquery:
+
+SELECT 1
+FROM Student
+WHERE DeptID = 3;
+
+No rows found ✖
+
+EXISTS = FALSE
+
+ECE is not displayed.
+
+Output
+DeptName
+CSE
+IT
+
+Only departments having students are shown.
+
+Why Use SELECT 1?
+SELECT 1
+FROM Student
+WHERE s.DeptID = d.DeptID
+
+The value 1 itself is not important.
+
+You could write:
+
+SELECT *
+
+or
+
+SELECT Name
+
+and the result would be the same.
+
+SELECT 1 is used because it is simple and indicates that we are only checking for existence.

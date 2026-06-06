@@ -1,0 +1,58 @@
+//Joins example
+
+@Types of JOIN in SQL
+  1) INNER JOIN
+    Returns only matching rows from both tables.
+  Use
+    If a student has no matching department, that student will not appear.
+  @EXAMPLE:
+SELECT s.Name, d.DepartmentName
+FROM Student s
+INNER JOIN Department d
+ON s.DepartmentID = d.DepartmentID;
+
+2) LEFT OUTER JOIN
+  Returns all rows from the left table and matching rows from the right table. If no match is found, right table values become NULL.
+Meaning:
+  All students will be shown
+  If a student does not belong to a valid department, DepartmentName will be NULL
+Example
+SELECT s.Name, d.DepartmentName
+FROM Student s
+LEFT JOIN Department d
+ON s.DepartmentID = d.DepartmentID;
+
+3) RIGHT OUTER JOIN
+    Returns all rows from the right table and matching rows from the left table. If no match is found, left table values become NULL.
+  Meaning
+    All departments will be shown
+    If a department has no students, Name will be NULL
+Example
+SELECT s.Name, d.DepartmentName
+FROM Student s
+RIGHT JOIN Department d
+ON s.DepartmentID = d.DepartmentID;
+
+4) FULL OUTER JOIN
+  Returns all rows from both tables. Matching rows are combined, and non-matching rows from either side appear with NULL values.
+//  code:
+  SELECT s.Name, d.DepartmentName
+FROM Student s
+FULL OUTER JOIN Department d
+ON s.DepartmentID = d.DepartmentID;
+//
+Meaning
+  All students and all departments are shown
+  If there is no match on either side, the missing side becomes NULL
+
+5) CROSS JOIN
+  Returns all possible combinations of rows from both tables.
+
+Example
+SELECT s.Name, d.DepartmentName
+FROM Student s
+CROSS JOIN Department d;
+//
+Meaning
+  If there are 3 students and 4 departments, the result will have 12 rows.
+

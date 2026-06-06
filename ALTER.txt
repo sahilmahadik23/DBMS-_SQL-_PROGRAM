@@ -1,0 +1,12 @@
+// ALTERING THE ATTRIBUTE OF THE TABLE.
+
+ALTER TABLE Student
+ADD Email VARCHAR(100);
+
+//ALTER TABLE Student
+  ALTER TABLE is used to modify the structure of an existing table.
+  Student is the name of the table to be modified.
+  ADD Email VARCHAR(100)
+  ADD is used to add a new column.
+  Email is the name of the new column.
+  VARCHAR(100) means the column can store text up to 100 characters long.

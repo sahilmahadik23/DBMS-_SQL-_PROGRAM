@@ -1,0 +1,28 @@
+//INSERTING attribute values in table
+
+INSERT INTO Student
+VALUES(1,'Abzaan','CSE',85);
+
+INSERT INTO Student
+VALUES(2,'Ali','IT',90);
+
+// INSERT INTO Student:
+  INSERT INTO means add data into a table.
+  Student is the table name where the data will be stored.
+
+// VALUES(...):
+  VALUES contains the actual data you want to insert.
+  The values must match the table columns in the same order.
+
+//FLOW:
+  INSERT INTO Student
+  VALUES(1,'Abzaan','CSE',85);
+  
+  This adds one row into the table:
+  
+  1 → RollNo
+  'Abzaan' → Name
+  'CSE' → Department
+  85 → Marks
+  
+  So one student record is inserted.

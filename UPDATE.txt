@@ -1,0 +1,26 @@
+// Update the table attribute.
+
+UPDATE Student
+SET Marks = 95
+WHERE RollNo = 1;
+
+// UPDATE Student
+  UPDATE is used to modify existing data in a table.
+  Student is the name of the table.
+
+// SET Marks = 95
+  SET specifies the column to be updated.
+  Marks = 95 means change the value of the Marks column to 95.
+
+// WHERE RollNo = 1
+  WHERE identifies which row should be updated.
+  Only the student whose Roll Number is 1 will be affected.
+
+// If you write:
+
+UPDATE Student
+SET Marks = 95;
+
+(without WHERE)
+
+then all students' marks will become 95.

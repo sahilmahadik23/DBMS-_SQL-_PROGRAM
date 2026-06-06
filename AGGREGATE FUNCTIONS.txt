@@ -1,0 +1,23 @@
+// AGGREGATE FUNCTION:These are Aggregate Functions in SQL. Aggregate functions perform calculations on multiple rows and return a single result.
+
+EXAMPLE:
+SELECT COUNT(*) FROM Student;
+
+SELECT MAX(Marks) FROM Student;
+
+SELECT MIN(Marks) FROM Student;
+
+SELECT AVG(Marks) FROM Student;
+
+SELECT SUM(Marks) FROM Student;
+//
+
+COUNT:Counts the total number of rows (records) in the table.
+
+MAX:Finds the highest value in the Marks column.
+
+MIN:Finds the lowest value in the Marks column.
+
+AVG:Calculates the average (mean) of all marks.
+
+SUM:Calculates the total sum of all marks.

@@ -1,0 +1,35 @@
+//Creating Table :
+
+CREATE TABLE Student(
+);
+
+// This is how we create table .Now to add attributes in table
+
+CREATE TABLE Student(
+    RollNo INT PRIMARY KEY,
+    Name VARCHAR(50),
+    Department VARCHAR(50),
+    Marks INT
+);
+
+// RollNo:
+  Column name.
+  Stores the student's roll number.
+
+//  INT:
+  Data type.
+  INT means Integer (whole numbers).
+
+// PRIMARY KEY
+  Uniquely identifies each record in the table.
+  Cannot contain duplicate values.
+  Cannot contain NULL values.
+
+// Name
+  Column name.
+  Stores the student's name.
+// VARCHAR(50)
+  Variable-length character string.
+  Can store up to 50 characters.
+
+  //

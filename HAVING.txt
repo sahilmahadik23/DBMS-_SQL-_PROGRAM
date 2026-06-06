@@ -1,0 +1,52 @@
+@ HAVING 
+
+@ What is HAVING?
+  HAVING is used to filter groups created by GROUP BY.
+
+// Difference Between WHERE and HAVING
+       WHERE	                                       HAVING  
+Filters rows before grouping            	Filters groups after grouping
+Cannot use aggregate functions directly 	Can use aggregate functions
+Used before GROUP BY	                    Used after GROUP BY
+
+EXAMPLE:(Having)
+SELECT Department,
+COUNT(*)
+FROM Student
+GROUP BY Department
+HAVING COUNT(*) > 2;
+
+//
+SELECT Department, COUNT(*)
+Department → Shows the department name.
+COUNT(*) → Counts the number of students in each department.
+
+FROM Student
+Retrieves data from the Student table.
+
+GROUP BY Department
+Groups students according to their department.
+
+HAVING COUNT(*) > 2
+Filters the groups after grouping.
+Only departments with more than 2 students are displayed.
+
+Example Table
+RollNo	Name	  Department
+1	      Abzaan	 CSE
+2	      Ali	     IT
+3	      Sara	   CSE
+4	      John	   IT
+5	      Aisha	   CSE 
+
+Step 1: GROUP BY Result
+Department	COUNT(*)
+CSE	          3
+IT	          2
+
+Step 2: HAVING COUNT(*) > 2
+
+Only CSE satisfies the condition:
+
+Department	COUNT(*)
+CSE	          3

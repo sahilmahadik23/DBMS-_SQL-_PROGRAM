@@ -1,0 +1,66 @@
+                                                           @ INDEX
+
+//
+What is an Index?
+
+An Index is a database object that improves the speed of data retrieval operations.
+
+Think of it like the index of a book:
+
+Without an index, you have to check every page.
+With an index, you can quickly find the required topic.
+
+Similarly, a database uses an index to find records faster.
+
+Breaking the Query
+CREATE INDEX idx_name
+CREATE INDEX → Creates a new index.
+idx_name → Name of the index.
+
+ON Student(Name)
+Student → Table name.
+Name → Column on which the index is created.
+
+The database creates an index for the Name column.
+//
+Example:
+CREATE INDEX idx_name
+ON Student(Name);
+// This statement creates an Index on the Name column of the Student table.
+
+Example
+Student Table
+RollNo	Name	 Marks
+1      	Abzaan	85
+2	       Ali	  90
+3	       Sara	  75
+4	       John  	95
+
+Query:
+
+SELECT * FROM Student
+WHERE Name = 'Ali';
+
+Without an index:
+
+Database may scan all rows.
+
+With an index:
+
+Database can locate "Ali" much faster.
+
+Advantages of Index
+  Faster searching of records.
+  Improves performance of SELECT queries.
+  Speeds up operations using WHERE, ORDER BY, and JOIN.
+
+Disadvantages of Index
+  Uses additional storage space.
+  INSERT, UPDATE, and DELETE operations can become slightly slower because the index must also be updated.
+  Delete an Index
+
+(MySQL syntax)
+
+DROP INDEX idx_name ON Student;
+
+This removes the index.

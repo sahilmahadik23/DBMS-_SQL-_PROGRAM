@@ -1,0 +1,36 @@
+@ Views
+//
+What is a View?
+  A View is a virtual table based on the result of a SQL query.
+  -It does not store data separately.
+  -It displays data from one or more tables.
+  -It behaves like a table.
+//
+Example:
+CREATE VIEW StudentView AS
+SELECT Name, Marks
+FROM Student;
+//This statement creates a View named StudentView.
+//
+CREATE VIEW StudentView AS
+  CREATE VIEW → Used to create a view.
+  StudentView → Name of the view.
+  AS → Specifies the query that defines the view.
+
+SELECT Name, Marks FROM Student
+  Retrieves only the Name and Marks columns from the Student table.
+  These columns become part of the view.
+
+Once created, you can query it like a table:
+
+SELECT * FROM StudentView;
+
+//
+Why Use Views?
+  Security
+    Hide sensitive columns.
+    Example: Show Name and Marks but hide Salary.
+  Simplicity
+    Store complex queries and reuse them.
+  Data Abstraction
+    Users see only the required data.

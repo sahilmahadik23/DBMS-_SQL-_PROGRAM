@@ -1,0 +1,37 @@
+@ TRIGGER 
+
+@ What is a Trigger?
+  A Trigger is a special stored program that automatically executes when a specific event occurs on a table.
+  Events can be:
+    INSERT
+    UPDATE
+    DELETE
+
+EXAMPLE:
+
+CREATE TRIGGER marks_check
+BEFORE INSERT
+ON Student
+FOR EACH ROW
+SET NEW.Marks =
+IFNULL(NEW.Marks,0);
+
+///////// E N D ///////////
+
+Example :
+INSERT INTO Student
+VALUES (1,'Abzaan','CSE',NULL);
+
+Before insertion:
+
+RollNo	Name	Department	Marks
+1	     Abzaan	  CSE     	NULL
+
+Trigger executes:
+
+NEW.Marks = IFNULL(NULL,0)
+
+Result:
+
+RollNo	Name	Department	Marks
+1	     Abzaan	  CSE	        0

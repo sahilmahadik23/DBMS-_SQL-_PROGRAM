@@ -1,0 +1,111 @@
+@ NESTED 
+@ What is a Subquery?
+  A Subquery (Nested Query) is a query written inside another query.
+
+In this example:
+
+SELECT AVG(Marks)
+FROM Student
+
+is the subquery.
+
+It executes first and returns a single value (the average marks).
+
+
+EXAMPLE:
+@ Students having marks greater than average marks
+
+SELECT Name, Marks
+FROM Student
+WHERE Marks >
+(
+    SELECT AVG(Marks)
+    FROM Student
+);
+
+
+
+/////////////
+
+Types of Subqueries
+1. Single Row Subquery
+
+Returns only one row.
+
+Example: Find students whose marks are greater than the average marks.
+
+SELECT Name, Marks
+FROM Student
+WHERE Marks >
+(
+    SELECT AVG(Marks)
+    FROM Student
+);
+2. Multiple Row Subquery
+
+Returns multiple rows.
+
+Example: Find students from Computer Science and Physics departments.
+
+SELECT Name
+FROM Student
+WHERE DeptID IN
+(
+    SELECT DeptID
+    FROM Department
+    WHERE DeptName IN ('Computer Science', 'Physics')
+);
+3. Correlated Subquery
+
+Inner query depends on the outer query.
+
+Example: Students scoring above their department average.
+
+SELECT Name, Marks
+FROM Student S1
+WHERE Marks >
+(
+    SELECT AVG(Marks)
+    FROM Student S2
+    WHERE S1.DeptID = S2.DeptID
+);
+
+4. Subquery with EXISTS
+SELECT DeptName
+FROM Department D
+WHERE EXISTS
+(
+    SELECT *
+    FROM Student S
+    WHERE D.DeptID = S.DeptID
+);
+
+5. Subquery with NOT EXISTS
+SELECT DeptName
+FROM Department D
+WHERE NOT EXISTS
+(
+    SELECT *
+    FROM Student S
+    WHERE D.DeptID = S.DeptID
+);
+
+6. Subquery with ANY
+SELECT Name, Salary
+FROM Instructor
+WHERE Salary > ANY
+(
+    SELECT Salary
+    FROM Instructor
+    WHERE DeptID = 1
+);
+
+7. Subquery with ALL
+SELECT Name, Salary
+FROM Instructor
+WHERE Salary > ALL
+(
+    SELECT Salary
+    FROM Instructor
+    WHERE DeptID = 1
+);

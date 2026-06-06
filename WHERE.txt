@@ -1,0 +1,20 @@
+//Using the WHERE Command 
+
+SELECT *
+FROM Student
+WHERE Marks > 80;
+
+// What is WHERE?
+  The WHERE clause is used to filter rows that satisfy a specified condition.
+
+// SELECT *
+  SELECT is used to retrieve data.
+  * means all columns.
+
+// FROM Student
+  Specifies that data should be fetched from the Student table.
+
+// WHERE Marks > 80
+  WHERE is used to filter records based on a condition.
+  Marks > 80 means only students whose marks are greater than 80 will be displayed.
+

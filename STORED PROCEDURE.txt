@@ -1,0 +1,74 @@
+@ STORED PROCEDURE
+
+EXAMPLE:
+DELIMITER //
+
+CREATE PROCEDURE GetStudents()
+BEGIN
+    SELECT * FROM Student;
+END //
+
+DELIMITER ;
+//////////////////////////////////// E N D /////////////////////
+//
+This code creates a Stored Procedure named GetStudents.
+///
+What is a Stored Procedure?
+
+A Stored Procedure is a collection of SQL statements stored in the database that can be executed whenever needed.
+
+It is similar to a function in programming.
+
+Breaking the Code
+
+1. DELIMITER //
+DELIMITER //
+By default, MySQL uses ; to end a statement.
+Since the procedure contains SQL statements ending with ;, we temporarily change the delimiter to //.
+This tells MySQL not to end the procedure definition at the first ;.
+
+2. CREATE PROCEDURE GetStudents()
+
+CREATE PROCEDURE GetStudents()
+CREATE PROCEDURE creates a stored procedure.
+GetStudents is the procedure name.
+() means it takes no parameters.
+
+3. BEGIN
+BEGIN
+Marks the start of the procedure body.
+Multiple SQL statements can be written inside.
+
+4. SELECT * FROM Student;
+SELECT * FROM Student;
+Retrieves all rows and columns from the Student table.
+This statement will run whenever the procedure is called.
+
+5. END //
+END //
+Marks the end of the procedure.
+// is used because we changed the delimiter.
+
+6. DELIMITER ;
+DELIMITER ;
+Restores the default delimiter (;).
+How to Execute the Procedure
+
+After creating it, run:
+
+CALL GetStudents();
+Output
+
+If the Student table contains:
+
+RollNo	  Name	   Department	Marks
+1       	Abzaan	  CSE	       85
+2	        Ali	       IT	       90
+
+The procedure returns:
+
+RollNo	Name	Department	Marks
+1	      Abzaan	CSE	       85
+2	        Ali	  IT	       90
+
+///

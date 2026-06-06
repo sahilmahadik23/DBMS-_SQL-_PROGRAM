@@ -1,0 +1,11 @@
+// DELETE
+
+DELETE FROM Student
+WHERE RollNo = 2;
+
+// DELETE FROM Student
+  DELETE is used to remove records (rows) from a table.
+  Student is the name of the table.
+// WHERE RollNo = 2
+  WHERE specifies which row should be deleted.
+  RollNo = 2 means delete the student whose roll number is 2.

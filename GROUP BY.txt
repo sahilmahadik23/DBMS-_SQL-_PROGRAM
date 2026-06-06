@@ -1,0 +1,28 @@
+// GROUP BY
+
+// What is GROUP BY?
+    GROUP BY is used to arrange rows into groups based on one or more columns so that aggregate functions (COUNT, SUM, AVG, MAX, MIN) can be applied to each group.
+-GROUP BY groups rows having the same values in a specified column.
+-It is commonly used with aggregate functions like COUNT(), SUM(), AVG(), MAX(), and MIN().
+-COUNT(*) counts the number of rows in each group.
+-GROUP BY Department creates separate groups for each department.
+-The query returns the number of students in each department.
+
+SELECT Department,
+COUNT(*)
+FROM Student
+GROUP BY Department;
+
+//
+ This query counts the number of students in each department.
+
+SELECT Department, COUNT(*)
+Department → Displays the department name.
+COUNT(*) → Counts the number of students in that department.
+
+FROM Student
+Retrieves data from the Student table.
+
+GROUP BY Department
+Groups all rows having the same department together.
+The COUNT(*) function is then applied to each group.

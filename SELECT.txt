@@ -1,0 +1,13 @@
+//DISPLAYING TABLE
+
+SELECT * FROM Student;
+       OR
+SELECT Name, Marks
+FROM Student;
+
+//SELECT → Used to fetch data from a table.
+    * (asterisk) → Means all columns.
+    FROM Student → Fetch data from the Student table.
+
+// SELECT Name, Marks → Display only the Name and Marks columns.
+  FROM Student → Data is taken from the Student table.

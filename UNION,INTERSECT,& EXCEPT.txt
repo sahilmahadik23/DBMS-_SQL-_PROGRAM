@@ -1,0 +1,69 @@
+1) UNION
+
+Combines rows from both queries.
+
+EXAMPLE:
+SELECT CourseID
+FROM Teaches
+WHERE Semester = 'Fall' AND Year = 2025
+
+UNION
+
+SELECT CourseID
+FROM Teaches
+WHERE Semester = 'Spring' AND Year = 2025;
+////// E n d ////////
+Types
+UNION → removes duplicate rows
+UNION ALL → keeps duplicate rows
+
+example:
+SELECT CourseID FROM Teaches WHERE Semester = 'Fall'
+UNION ALL
+SELECT CourseID FROM Teaches WHERE Semester = 'Spring';
+
+2) INTERSECT
+
+Returns only the common rows in both queries.
+
+EXAMPLE:
+SELECT CourseID
+FROM Teaches
+WHERE Semester = 'Fall' AND Year = 2025
+
+INTERSECT
+
+SELECT CourseID
+FROM Teaches
+WHERE Semester = 'Spring' AND Year = 2025;
+/////// E n d ////////
+
+Types
+INTERSECT → common distinct rows
+INTERSECT ALL → keeps duplicates, if your DBMS supports it
+
+3) EXCEPT
+
+Returns rows from the first query that are not in the second.
+
+EXAMPLE:
+SELECT CourseID
+FROM Teaches
+WHERE Semester = 'Fall' AND Year = 2025
+
+EXCEPT
+
+SELECT CourseID
+FROM Teaches
+WHERE Semester = 'Spring' AND Year = 2025;
+/////// E n d ////////
+Types
+EXCEPT → distinct difference
+EXCEPT ALL → keeps duplicate differences, if supported
+
+@ Important rule for all three
+
+Both queries must return:
+
+the same number of columns
+compatible data types in corresponding columns

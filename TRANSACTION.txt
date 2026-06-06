@@ -1,0 +1,51 @@
+@ TRANSACTION 
+@ What is a Transaction?
+  A transaction ensures that database changes are made safely.
+  A transaction follows the principle:
+  Either all operations are completed successfully, or none of them are applied.
+
+ACID Properties of Transactions
+
+A transaction follows ACID:
+
+A – Atomicity → All or nothing.
+C – Consistency → Database remains valid.
+I – Isolation → Transactions do not interfere with each other.
+D – Durability → Committed changes are permanent.
+
+EXAMPLE:
+START TRANSACTION;
+
+UPDATE Student
+SET Marks = 90
+WHERE RollNo = 1;
+
+COMMIT;
+///// E N D /////////
+
+@COMMIT
+  COMMIT;
+  Permanently saves all changes made during the transaction.
+  After COMMIT, the changes cannot be undone using ROLLBACK.
+
+1. START TRANSACTION
+START TRANSACTION;
+  Begins a new transaction.
+  Changes made after this point are temporary until committed.
+
+2. UPDATE Student
+UPDATE Student
+  SET Marks = 90
+  WHERE RollNo = 1;
+  Updates the marks of the student whose RollNo is 1.
+  The change is not permanently saved yet.
+
+Before Update
+
+RollNo	Name	Marks
+1	     Abzaan	 85
+2	      Ali	   90
+Temporary Result
+RollNo	Name	Marks
+1	     Abzaan	 90
+2	       Ali	 90
