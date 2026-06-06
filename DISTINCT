@@ -1,0 +1,5 @@
+SELECT DISTINCT dept_name
+FROM instructor;
+
+
+for you to remove the duplicate values then just add 'distinct' after SELECT
