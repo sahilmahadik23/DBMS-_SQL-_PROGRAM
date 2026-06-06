@@ -1,0 +1,6 @@
+SELECT name
+FROM instructor
+WHERE salary IS NULL;
+
+
+here salary which are null will be display
